@@ -1,4 +1,13 @@
 <?php
+/*
+Dimas Prayuda
+203040120
+https://github.com/dimasprayuda212/pw2021_203040120
+Pertemuan 3 - 23 Februari 2021
+Mempelajari mengenai Struktur Kendali PHP
+*/
+?>
+<?php
 // pengulangan
 // for
 // while
@@ -18,8 +27,6 @@
 //    echo "Hello World! <br>";
 // $i++;
 // } while( $i < 5 );
-
-
 
 
 ?>
