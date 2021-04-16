@@ -4,9 +4,6 @@
     // Jum'at 13.00-14.00
     // https://github.com/dimasprayuda212/pw2021_203040120
     // Tugas Praktikum PW
-    // Merubah Field "Nama Barang" menjadi "Nama" Alasannya agar mempermudah ketika memanggil di codingan pertemuan 5
-    // Merubah Field "Stok Barang" menjadi "Stok" Alasannya agar mempermudah ketika memanggil di codingan pertemuan 5
-    // Merubah Field No menjadi id Alasannya agar mempermudah kodingan karena error terus di pertemuan 5
 ?>
 
 <?php 

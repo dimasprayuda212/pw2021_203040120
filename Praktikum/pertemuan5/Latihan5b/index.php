@@ -6,28 +6,28 @@
     // Tugas Praktikum PW
 ?>
 <?php 
-    $conn = mysqli_connect("localhost", "root", "");
-    mysqli_select_db($conn, "pw_tubes_203040120");
-    $result = mysqli_query($conn, "SELECT * FROM barang");
+require 'php/functions.php';
+$barang = query("SELECT * FROM barang")
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
         <!--Import Google Icon Font-->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!--Import materialize.css-->
         <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
         <!-- css style -->
-        <link rel="stylesheet" href="css/stylee.css">
+        <link rel="stylesheet" href="css/style.css">
     <title>SmartPhone</title>
 </head>
 <body>
 <script type="text/javascript" src="js/materialize.min.js"></script>
     <div class="container">
-       <table class="orange lighten-1">
+    <h1 class="centered black-text">D3 Phone</h1>
+    <table class="orange lighten-1">
                 <tr class="blue-grey lighten-2">
                     <th>No</th>
                     <th>Nama Barang</th>
@@ -38,19 +38,23 @@
                     <th>Foto</th>
                 </tr>
                 <?php $i = 1 ?>
-                <?php while($row = mysqli_fetch_assoc($result)) : ?>
+                <?php foreach ($barang as $brg) : ?>
                     <tr>
                         <td><?= $i ?></td>
-                        <td><?= $row["Nama"]; ?></td>
-                        <td><?= $row["Spesifikasi"]; ?></td>
-                        <td><?= $row["Warna"]; ?></td>
-                        <td><?= $row["Harga"]; ?></td>
-                        <td><?= $row["Stok"]; ?></td>
-                        <td><img src="assets/image/<?= $row["Foto"]; ?>" alt=""></td>
+                        <td><?= $brg["Nama"]; ?></td>
+                        <td><?= $brg["Spesifikasi"]; ?></td>
+                        <td><?= $brg["Warna"]; ?></td>
+                        <td><?= $brg["Harga"]; ?></td>
+                        <td><?= $brg["Stok"]; ?></td>
+                        <td><img src="assets/image/<?= $brg["Foto"]; ?>" alt=""></td>
+                        <td>
+                        <p class="Nama">
+                   <a href="php/detaill.php?id=<?= $brg['id']; ?>">
+                   <?= $brg["Nama"]; ?>
+                        </td>
                     </tr>
                     <?php $i++ ?>
-                <?php endwhile; ?>
-        </table>
+                <?php endforeach; ?>
     </div>
 </body>
 </html>

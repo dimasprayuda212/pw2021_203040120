@@ -1,17 +1,11 @@
-<?php 
-    // Dimas Prayuda
-    // 203040120
-    // Jum'at 13.00-14.00
-    // https://github.com/dimasprayuda212/pw2021_203040120
-    // Tugas Praktikum PW
-    // Merubah Field "Nama Barang" menjadi "Nama" Alasannya agar mempermudah ketika memanggil di codingan pertemuan 5
-    // Merubah Field "Stok Barang" menjadi "Stok" Alasannya agar mempermudah ketika memanggil di codingan pertemuan 5
-    // Merubah Field No menjadi id Alasannya agar mempermudah kodingan karena error terus di pertemuan 5
-?>
-<?php 
-require 'php/functions.php';
+<?php
+// menghubungkan dengan file php lainnya
+require 'functions.php';
+
+// melakukan query
 $barang = query("SELECT * FROM barang")
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,16 +15,17 @@ $barang = query("SELECT * FROM barang")
         <!--Import Google Icon Font-->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!--Import materialize.css-->
-        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
         <!-- css style -->
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="../css/style.css">
     <title>SmartPhone</title>
 </head>
 <body>
-<script type="text/javascript" src="js/materialize.min.js"></script>
+<script type="text/javascript" src="../js/materialize.min.js"></script>
     <div class="container">
-    <table class="orange lighten-1">
-                <tr class="blue-grey lighten-2">
+    <h1 class="centered black-text">D3 Phone</h1>
+    <table class="centered highlight - black-text orange lighten-1">
+                <tr class="z-depth-5 blue-grey lighten-2 black-text">
                     <th>No</th>
                     <th>Nama Barang</th>
                     <th>Spesifikasi</th>
@@ -38,6 +33,8 @@ $barang = query("SELECT * FROM barang")
                     <th>Harga</th>
                     <th>Stok Barang</th>
                     <th>Foto</th>
+                    <th>Detail</th>
+                    <th>Opsi</th>
                 </tr>
                 <?php $i = 1 ?>
                 <?php foreach ($barang as $brg) : ?>
@@ -48,11 +45,15 @@ $barang = query("SELECT * FROM barang")
                         <td><?= $brg["Warna"]; ?></td>
                         <td><?= $brg["Harga"]; ?></td>
                         <td><?= $brg["Stok"]; ?></td>
-                        <td><img src="assets/image/<?= $brg["Foto"]; ?>" alt=""></td>
+                        <td><img src="../assets/image/<?= $brg["Foto"]; ?>" alt=""></td>
                         <td>
                         <p class="Nama">
-                   <a href="php/detaill.php?id_brg=<?= $brg['id'] ?>">
+                   <a href="../php/detaill.php?id=<?= $brg['id']; ?>">
                    <?= $brg["Nama"]; ?>
+                        </td>
+                        <td>
+                            <a href="" class="waves-effect waves-light green lighten-2 btn-small">Ubah</a>
+                            <a href="" class="waves-effect waves-light pink darken-3 btn-small">Hapus</a>
                         </td>
                     </tr>
                     <?php $i++ ?>

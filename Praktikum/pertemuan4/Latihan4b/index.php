@@ -40,11 +40,11 @@ $barang = query("SELECT * FROM barang")
                 <?php foreach ($barang as $brg) : ?>
                     <tr>
                         <td><?= $i ?></td>
-                        <td><?= $brg["Nama Barang"]; ?></td>
+                        <td><?= $brg["Nama"]; ?></td>
                         <td><?= $brg["Spesifikasi"]; ?></td>
                         <td><?= $brg["Warna"]; ?></td>
                         <td><?= $brg["Harga"]; ?></td>
-                        <td><?= $brg["Stok Barang"]; ?></td>
+                        <td><?= $brg["Stok"]; ?></td>
                         <td><img src="assets/image/<?= $brg["Foto"]; ?>" alt=""></td>
                     </tr>
                     <?php $i++ ?>
