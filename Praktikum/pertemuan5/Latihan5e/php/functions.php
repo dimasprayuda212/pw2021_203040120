@@ -76,3 +76,16 @@ function ubah($barang)
 
     return mysqli_affected_rows($conn);
 }
+
+function cari($keyword) {
+    $query = "SELECT * FROM barang WHERE
+            Nama LIKE '%$keyword%' OR
+            Spesifikasi LIKE '%$keyword%' OR
+            Warna LIKE '%$keyword%' OR
+            Harga LIKE '%$keyword%' OR
+            Stok LIKE '%$keyword%'
+            ";
+            return query($query);
+}
+
+?>
