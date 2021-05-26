@@ -1,6 +1,6 @@
 const tombolCari = document.querySelector('.tombol-cari');
 const keyword = document.querySelector('.keyword');
-const container = document.querySelector('.container');
+const container = document.querySelector('.my-container');
 
 // hilangkan tombol cari
 tombolCari.style.display = 'none';
@@ -27,3 +27,17 @@ keyword.addEventListener('keyup', function () {
         .then((response) => (container.innerHTML = response));
 
 });
+
+// Preview Image untuk Tambah dan Ubah
+function previewImage() {
+    const Foto = document.querySelector('.Foto');
+    const imgPreview = document.querySelector('.img-preview');
+
+    const oFReader = new FileReader();
+    oFReader.readAsDataURL(Foto.files[0]);
+
+    oFReader.onload = function (oFREvent) {
+        imgPreview.src = oFREvent.target.result;
+    };
+}
+

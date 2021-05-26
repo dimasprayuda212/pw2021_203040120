@@ -55,7 +55,7 @@ if (isset($_POST['tambah'])) {
     <script type="text/javascript" src="..js/materialize.min.js"></script>
     <div class="container">
         <h3>Form Tambah Data</h3>
-        <form action="" method="post">
+        <form action="" method="post" enctype="multipart/form-data">
             <ul>
                 <li>
                     <label for="Nama">Nama Barang :</label><br>
@@ -79,7 +79,8 @@ if (isset($_POST['tambah'])) {
                 </li>
                 <li>
                     <label for="Foto">Foto :</label><br>
-                    <input type="file" name="Foto" id="Foto" required><br><br>
+                    <input type="file" name="Foto" id="Foto" class="Foto" onchange="previewImage()"><br><br>
+                    <img src="../assets/imagee/nophoto.jpg" width="120" class="img-preview">
                 </li>
                 <br>
                 <button type="submit" name="tambah" class="waves-effect waves-light red lighten-2 btn small">Tambah Data!</button>
@@ -89,6 +90,8 @@ if (isset($_POST['tambah'])) {
             </ul>
         </form>
     </div>
+
+    <script src="../js/script.js"></script>
 </body>
 
 </html>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 30 Apr 2021 pada 11.28
+-- Waktu pembuatan: 26 Bulan Mei 2021 pada 15.03
 -- Versi server: 10.4.16-MariaDB
 -- Versi PHP: 7.4.12
 
@@ -47,6 +47,27 @@ INSERT INTO `mahasiswa` (`id`, `nama`, `nrp`, `email`, `jurusan`, `gambar`) VALU
 (4, 'Bimo Resnumurti', '203040026', 'bimoresnumurti@gmail.com', 'Teknik Informatika', 'bimo.jpg'),
 (5, 'Fresa Bayu', '203040137', 'fresabayu@gmail.com', 'Teknik Informatika', 'fresa.jpg');
 
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `user`
+--
+
+INSERT INTO `user` (`id`, `username`, `password`) VALUES
+(3, 'pw', '$2y$10$T3Npm0ROGE0GN4uNPry86e3tDyz1XSfKyY0uwVUINQffOGDvKd/bS'),
+(4, 'admin', '$2y$10$b6BuoTo5dEOh.pJdXMe4l.UmpQ0bAhoM8E/rOn1Kc829jt9nw4u1m'),
+(5, 'dimas', '$2y$10$AEh.6d.tzQXi.FFEE2U8u.yZ2ITNhBiSx5R7ZwpX5N2VNFaojrH8C');
+
 --
 -- Indexes for dumped tables
 --
@@ -58,6 +79,12 @@ ALTER TABLE `mahasiswa`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeks untuk tabel `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
@@ -65,7 +92,13 @@ ALTER TABLE `mahasiswa`
 -- AUTO_INCREMENT untuk tabel `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT untuk tabel `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

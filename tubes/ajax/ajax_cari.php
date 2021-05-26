@@ -47,7 +47,4 @@ $barang = cari($_GET['keyword']);
                 <?php $i++; ?>
             <?php endforeach; ?>
         <?php endif; ?>
-        <div class="logout">
-            <a href="logout.php" class="waves-effect waves-light pink btn-small">Logout</a>
-        </div>
     </table>

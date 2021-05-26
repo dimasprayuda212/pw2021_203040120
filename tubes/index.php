@@ -158,7 +158,7 @@ if (isset($_GET["cari"])) {
                 <div class="card-panel grey darken-3 center white-text">
                     <i class="material-icons"></i>
                     <h5>Contact</h5>
-                    <p>If you want to contact me, in Social Media.</p>
+                    <p>Jika Anda ingin menghubungi saya, di Media Sosial.</p>
                     <p>instagram : @dimspryda_</p>
                     <p>facebook : Dimass Prayuda</p>
                     <img src="../tubes_203040120/assets/img/ig.png " width="50px">
@@ -174,7 +174,7 @@ if (isset($_GET["cari"])) {
     </footer>
 
 
-
+    <script src="js/script.js"></script>
 
 
 

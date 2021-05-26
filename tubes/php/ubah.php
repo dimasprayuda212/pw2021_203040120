@@ -58,7 +58,7 @@ if (isset($_POST['ubah'])) {
     <script type="text/javascript" src="..js/materialize.min.js"></script>
     <div class="container">
         <h3>Form Ubah Data</h3>
-        <form action="" method="post">
+        <form action="" method="post" enctype="multipart/form-data">
             <input type="hidden" name="id" id="id" value="<?= $brg['id']; ?>">
             <ul>
                 <li>
@@ -82,8 +82,10 @@ if (isset($_POST['ubah'])) {
                     <input type="text" name="Stok" id="Stok" required value="<?= $brg['Stok']; ?>">
                 </li>
                 <li>
+                    <input type="hidden" name="Foto_lama" value="<?= $brg['Foto']; ?>">
                     <label for="Foto">Foto :</label><br>
-                    <input type="file" name="Foto" id="Foto" required value="<?= $brg['Foto']; ?>">
+                    <input type="file" name="Foto" id="Foto" class="Foto" onchange="previewImage()"><br><br>
+                    <img src="../assets/imagee/<?= $brg['Foto']; ?>" width="120" class="img-preview">
                 </li>
                 <br>
                 <button type="submit" name="ubah" class="waves-effect waves-light red lighten-2 btn small">Ubah Data!</button>
@@ -93,6 +95,8 @@ if (isset($_POST['ubah'])) {
             </ul>
         </form>
     </div>
+
+    <script src="../js/script.js"></script>
 </body>
 
 </html>

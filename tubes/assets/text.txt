@@ -1,0 +1,4 @@
+https://unsplash.com/ (gambar)
+https://id.pinterest.com/ (pinterest)
+https://fonts.googleapis.com/icon?family=Material+Icons (fonts/icon)
+materialize.css (framework)

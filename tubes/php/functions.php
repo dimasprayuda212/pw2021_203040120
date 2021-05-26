@@ -20,6 +20,62 @@ function query($sql)
     return $rows;
 }
 
+function upload() {
+
+    $nama_file = $_FILES['Foto']['name'];
+    $tipe_file = $_FILES['Foto']['type'];
+    $ukuran_file = $_FILES['Foto']['size'];
+    $error = $_FILES['Foto']['error'];
+    $tmp_file = $_FILES['Foto']['tmp_name'];
+
+    // ketika tidak ada gambar dipilih
+    if($error == 4) {
+        // echo "<script>
+        //         alert('pilih gambar terlebih dahulu!');
+        //     </script>";
+        return 'nophoto.jpg';
+    }
+
+    // cek ekstensi file
+    $daftar_gambar = ['jpg', 'jpeg', 'png'];
+    $ekstensi_file = explode('.', $nama_file);
+    $ekstensi_file = strtolower(end($ekstensi_file));
+    if (!in_array($ekstensi_file, $daftar_gambar)) {
+        echo "<script>
+                alert('yang anda pilih bukan gambar!');
+            </script>";
+        return false;
+    }
+
+    // cek type file
+    if ($tipe_file != 'image/jpeg' && $tipe_file != 'image/png') {
+        echo "<script>
+                alert('yang anda pilih bukan gambar!');
+            </script>";
+        return false;
+    }
+
+    // cek ukuran file
+    // maksimal 5Mb == 5000000
+    if ($ukuran_file > 5000000) {
+        echo "<script>
+                alert('ukuran terlalu besar!');
+            </script>";
+        return false;
+    }
+
+    // lolos pengecekan
+    // siap upload file
+    // generate nama file baru
+    $nama_file_baru = uniqid();
+    $nama_file_baru .= '.';
+    $nama_file_baru .= $ekstensi_file;
+    move_uploaded_file($tmp_file, '../assets/imagee/' . $nama_file_baru);
+
+    return $nama_file_baru;
+
+}
+
 // fungsi untuk menambahkan data didalam database
 function tambah($barang)
 {
@@ -30,7 +86,13 @@ function tambah($barang)
     $Warna = htmlspecialchars($barang['Warna']);
     $Harga = htmlspecialchars($barang['Harga']);
     $Stok = htmlspecialchars($barang['Stok']);
-    $Foto = htmlspecialchars($barang['Foto']);
+    // $Foto = htmlspecialchars($barang['Foto']);
+
+    // upload gambar
+    $Foto = upload();
+    if (!$Foto) {
+        return false;
+    }
 
     $query = "INSERT INTO barang
                     VALUES
@@ -44,6 +106,13 @@ function tambah($barang)
 function hapus($id)
 {
     $conn = koneksi();
+
+    // menghapus Foto di folder imagee
+    $brg = query("SELECT * FROM barang WHERE id = $id")[0];
+    if ($brg['Foto'] != 'nophoto.jpg') {
+        unlink('../assets/imagee/' . $brg['Foto']);
+    }
+
     mysqli_query($conn, "DELETE FROM barang WHERE id = $id");
 
     return mysqli_affected_rows($conn);
@@ -59,7 +128,16 @@ function ubah($barang)
     $Warna = htmlspecialchars($barang['Warna']);
     $Harga = htmlspecialchars($barang['Harga']);
     $Stok = htmlspecialchars($barang['Stok']);
-    $Foto = htmlspecialchars($barang['Foto']);
+    $Foto_lama = htmlspecialchars($barang['Foto_lama']);
+
+    $Foto = upload();
+    if (!$Foto) {
+        return false;
+    }
+
+    if($Foto == 'nophoto.jpg') {
+        $Foto = $Foto_lama;
+    }
 
     $query = "UPDATE barang SET
     
