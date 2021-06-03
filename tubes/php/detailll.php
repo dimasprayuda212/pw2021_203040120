@@ -3,10 +3,8 @@
 // 203040120
 // Jum'at 13.00-14.00
 // https://github.com/dimasprayuda212/pw2021_203040120
-// Tugas Praktikum PW
-?>
+// Tugas Besar Praktikum
 
-<?php
 // mengecek apakah ada id yang dikirimkan
 // jika tidak maka akan dikembalikan ke halaman index.php
 if (!isset($_GET['id'])) {

@@ -20,7 +20,8 @@ function query($sql)
     return $rows;
 }
 
-function upload() {
+function upload()
+{
 
     $nama_file = $_FILES['Foto']['name'];
     $tipe_file = $_FILES['Foto']['type'];
@@ -29,7 +30,7 @@ function upload() {
     $tmp_file = $_FILES['Foto']['tmp_name'];
 
     // ketika tidak ada gambar dipilih
-    if($error == 4) {
+    if ($error == 4) {
         // echo "<script>
         //         alert('pilih gambar terlebih dahulu!');
         //     </script>";
@@ -73,7 +74,6 @@ function upload() {
     move_uploaded_file($tmp_file, '../assets/imagee/' . $nama_file_baru);
 
     return $nama_file_baru;
-
 }
 
 // fungsi untuk menambahkan data didalam database
@@ -135,7 +135,7 @@ function ubah($barang)
         return false;
     }
 
-    if($Foto == 'nophoto.jpg') {
+    if ($Foto == 'nophoto.jpg') {
         $Foto = $Foto_lama;
     }
 
@@ -155,7 +155,8 @@ function ubah($barang)
     return mysqli_affected_rows($conn);
 }
 
-function cari($keyword) {
+function cari($keyword)
+{
 
     $conn = koneksi();
 
@@ -166,7 +167,7 @@ function cari($keyword) {
             Harga LIKE '%$keyword%' OR
             Stok LIKE '%$keyword%'
             ";
-            return query($query);
+    return query($query);
 
     $result = mysqli_query($conn, $query);
 
@@ -175,7 +176,6 @@ function cari($keyword) {
         $rows[] = $row;
     }
     return $rows;
-
 }
 
 function registrasi($data)
@@ -202,10 +202,3 @@ function registrasi($data)
 
     return mysqli_affected_rows($conn);
 }
-
-
-
-
-
-
-?>

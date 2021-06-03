@@ -3,9 +3,7 @@
 // 203040120
 // Jum'at 13.00-14.00
 // https://github.com/dimasprayuda212/pw2021_203040120
-// Tugas Praktikum PW
-?>
-<?php
+// Tugas Besar Praktikum
 require 'php/functions.php';
 
 $barang = query("SELECT * FROM barang");

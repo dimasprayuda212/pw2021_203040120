@@ -3,10 +3,8 @@
 // 203040120
 // Jum'at 13.00-14.00
 // https://github.com/dimasprayuda212/pw2021_203040120
-// Tugas Praktikum PW
-?>
+// Tugas Besar Praktikum
 
-<?php
 require 'functions.php';
 
 if (isset($_POST["register"])) {
@@ -66,7 +64,7 @@ if (isset($_POST["register"])) {
                 </tr>
             </div>
             <button type="submit" name=" register" class="waves-effect waves-light btn-small blue darken-2">REGISTER</button>
-                <a href="login.php" class="waves-effect waves-light btn-small blue darken-2">Kembali</a>
+            <a href="login.php" class="waves-effect waves-light btn-small blue darken-2">Kembali</a>
         </form>
 
     </div>

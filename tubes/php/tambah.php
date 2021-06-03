@@ -3,10 +3,8 @@
 // 203040120
 // Jum'at 13.00-14.00
 // https://github.com/dimasprayuda212/pw2021_203040120
-// Tugas Praktikum PW
-?>
+// Tugas Besar Praktikum
 
-<?php
 session_start();
 
 if (!isset($_SESSION["username"])) {
