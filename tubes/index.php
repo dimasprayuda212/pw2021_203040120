@@ -155,21 +155,21 @@ if (isset($_GET["cari"])) {
         <br>
         <div class="row">
             <div class="col m12 s6">
-                <div class="card-panel grey darken-3 center white-text">
+                <div class="card-panel grey darken-3 center black-text">
                     <i class="material-icons"></i>
                     <h5>Contact</h5>
                     <p>Jika Anda ingin menghubungi saya, di Media Sosial.</p>
                     <p>instagram : @dimspryda_</p>
                     <p>facebook : Dimass Prayuda</p>
-                    <img src="../tubes_203040120/assets/img/ig.png " width="50px">
-                    <img src="../tubes_203040120/assets/img/fb.png " width="50px">
+                    <img src="../tubes/assets/img/ig.png " width="50px">
+                    <img src="../tubes/assets/img/fb.png " width="50px">
                 </div>
             </div>
         </div>
     </div>
 
     <!--footer-->
-    <footer style="padding: 5px; height: 30px; color: white; text-align: center;">
+    <footer style="padding: 5px; height: 30px; color: black; text-align: center;">
         <p class="flow-text grey darken-3">&copy; 2021 D3 Store</p>
     </footer>
 
